@@ -26,7 +26,7 @@
     LDX #$00
     STX PPUADDR
 load_palettes:
-    LDA palettes,X
+    LDA palette_session_a,X
     STA PPUDATA
     INX
     CPX #16
@@ -50,11 +50,12 @@ forever:
 .addr nmi_handler, reset_handler, irq_handler
 
 .segment "RODATA"
-palettes:
-.byte $0f,$12,$24,$30
-.byte $0f,$0c,$21,$32
+palette_session_a:
+.byte $0f,$29,$21,$37
+.byte $0f,$36,$27,$37
 .byte $0f,$05,$16,$27
 .byte $0f,$0b,$1a,$29
+
 
 
 
