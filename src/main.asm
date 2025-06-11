@@ -39,7 +39,7 @@ vblankwait:                         ; wait for another vblank before continuing
     BPL vblankwait
     LDA #%10000000                  ; turn on NMIs, sprites use first pattern table
     STA PPUCTRL
-    LDA #%00011110                  ; turn on screen
+    LDA #%00001110                  ; turn on screen
     STA PPUMASK
 
 forever:
